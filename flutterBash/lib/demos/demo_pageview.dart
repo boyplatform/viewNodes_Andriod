@@ -44,6 +44,18 @@ class PageViewDemo extends StatelessWidget {
                     );
   }
 
+   Widget renderListView2(){
+
+     return   ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 10,
+                        itemExtent: 50.0,
+                        itemBuilder: (BuildContext context, int index) => getItem(context,index)
+                        
+                    );
+  }
+
+
   Widget getItem(context,index)
   {
       return Container(
@@ -68,9 +80,10 @@ class PageViewDemo extends StatelessWidget {
         color: Colors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,  //所有padding容器往TOP方向靠笼，中间无间距
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start, //column所有元素左对齐
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
+            Text("PageView:",textAlign: TextAlign.left,),
             Padding(
               padding: const EdgeInsets.fromLTRB(0,0,0,0),
               child: SizedBox(
@@ -79,6 +92,7 @@ class PageViewDemo extends StatelessWidget {
                 child: Stack(
                   alignment: AlignmentDirectional.center,
                   children: <Widget>[
+                    
                     renderPageView()
                     ,
                     Row(
@@ -110,6 +124,7 @@ class PageViewDemo extends StatelessWidget {
                 ),
               ),
             ),
+            Text("ListView1:",textAlign: TextAlign.left,),
             Padding(
               padding: const EdgeInsets.fromLTRB(0,0,0,0),
               child: SizedBox(
@@ -118,7 +133,23 @@ class PageViewDemo extends StatelessWidget {
                 child: Stack(
                   alignment: AlignmentDirectional.center,
                   children: <Widget>[
+                    
                     renderListView()
+                  ],
+                ),
+              ),
+            ),
+            Text("ListView2:",textAlign: TextAlign.left,),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0,0,0,0),
+              child: SizedBox(
+                width: double.maxFinite,
+                height: 150,
+                child: Stack(
+                  alignment: AlignmentDirectional.center,
+                  children: <Widget>[
+                   
+                    renderListView2()
                   ],
                 ),
               ),
