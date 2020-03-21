@@ -1,0 +1,11 @@
+dartdoc:
+  categories:
+    "Flutter-System":
+      documentationMarkdown: doc/index.md
+    "Flutter Page":
+      documentationMarkdown: doc/page.md
+    "Flutter Component":
+      documentationMarkdown: doc/component.md
+    "Flutter Demo":
+      documentationMarkdown: doc/demo.md
+  categoryOrder: ["Flutter-System", "Flutter Page","Flutter Component","Flutter Demo"]

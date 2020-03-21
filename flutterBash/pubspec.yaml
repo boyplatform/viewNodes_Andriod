@@ -1,0 +1,77 @@
+name: flutter_system
+description: Learn Flutter System
+
+version: 0.0.1
+
+environment:
+  sdk: ">=2.2.0 <3.0.0"
+
+# ^0.1.1 则版本应该为0.1.x , x >=1
+# '0.1.1' 指定版本
+dependencies:
+  flutter:
+    sdk: flutter
+  kicons:
+    path: kicons
+  flutter_localizations:
+    sdk: flutter
+  provider:
+  cupertino_icons: ^0.1.2
+  webview_flutter:
+  url_launcher:
+  http:
+  video_player:
+  shared_preferences:
+#  share:
+#  sensors:
+#  quick_actions:
+  path_provider: 
+#  image_picker:
+#  google_sign_in:
+#  package_info:
+#  local_auth:
+#  in_app_purchase:
+#  google_maps_flutter:
+#  device_info:
+#  connectivity:
+  camera:
+#  battery:
+  flutter_markdown:
+  dartdoc:
+  cached_network_image:
+  web_socket_channel:
+  sqflite:
+  path:
+  source_gen:
+# Add In
+  cookie_jar:  ^1.0.0
+  dio:  ^2.0.15
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  source_gen:
+  build_runner:
+  flutter_driver:
+    sdk: flutter
+  test:
+
+
+
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - images/
+    - assets/video/
+    - assets/json/
+
+  fonts:
+    - family: FangZhengFangSongJianTi
+      fonts:
+        - asset: assets/fonts/FangZhengFangSongJianTi.ttf
+
