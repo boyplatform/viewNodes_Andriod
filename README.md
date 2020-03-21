@@ -2,6 +2,10 @@
 A UI framework created by flutter to support andriod devices to be integrated to boyplatform board section backend.
 
 
+##Attention
+Please download both google andriod 'API28&29' into your local andriod SDK package to prepare your develop evironment.
+
+
 ## HomePage
 
 <div>
