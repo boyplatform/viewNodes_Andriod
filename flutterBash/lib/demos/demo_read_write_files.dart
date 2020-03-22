@@ -102,16 +102,16 @@ class _ReadWriteFileDemoState extends State<ReadWriteFileDemo> {
             title: Text("Read key value from xml"),
             onTap: () {
               _showDialog(
-                  "JK", KeyValueStorage.getString("jk", "default value"));
+                  "Boy", KeyValueStorage.getString("boy", "default value"));
             },
           ),
           ListTileCard(
             borderRadius: 4,
             title: Text("Write key value from xml"),
             onTap: () {
-              KeyValueStorage.saveString("jk", "https://github.com/boyplatform")
+              KeyValueStorage.saveString("boy", "https://github.com/boyplatform")
                   .then((value) {
-                _showDialog("jk", value ? "Success" : "Failed");
+                _showDialog("boy", value ? "Success" : "Failed");
               }).catchError((err) {
                 _showDialog("Error", err.toString());
               });
