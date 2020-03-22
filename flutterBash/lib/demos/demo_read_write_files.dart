@@ -101,8 +101,10 @@ class _ReadWriteFileDemoState extends State<ReadWriteFileDemo> {
             borderRadius: 4,
             title: Text("Read key value from xml"),
             onTap: () {
-              _showDialog(
-                  "Boy", KeyValueStorage.getString("boy", "default value"));
+              KeyValueStorage.getString("boy", "default value").then((value)=>
+               _showDialog("Boy", value)
+              );
+             
             },
           ),
           ListTileCard(
@@ -170,13 +172,19 @@ class KeyValueStorage {
     return prefs.setStringList(key, value);
   }
 
-  static String getString(String key, String defaultValue) {
-    _prefs.then((value) {
-      return value.getString(key);
-    }).catchError((err) {
-      return defaultValue;
-    });
-    return defaultValue;
+  static Future<String> getString(String key, String defaultValue) async {
+    try{
+      final prefs = await _prefs;
+      String result= prefs.getString(key);
+      if(result!=""){
+        return result;
+      }else{
+        return defaultValue;
+      }
+    }catch(e){
+        return defaultValue; 
+    }
+     
   }
 }
 
