@@ -19,7 +19,7 @@ class _MarkDownEditorPageState extends State<MarkDownEditorPage> {
       ),
       body: SafeArea(
           child: Markdown(
-        data: "# Title\n [我的博客](https://jiangkang.tech)\n![]($IMG_URL1)",
+        data: "# Title\n [我的博客](https://github.com/boyplatform)\n![]($IMG_URL1)",
       )),
     );
   }

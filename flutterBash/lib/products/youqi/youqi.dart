@@ -192,7 +192,7 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
                     InkWell(
                       onTap: () {
                         NavUtils.openWebView(context,
-                            _model.contentDetail ?? "https://jiangkang.tech");
+                            _model.contentDetail ?? "https://github.com/boyplatform");
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),

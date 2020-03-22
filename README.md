@@ -28,11 +28,11 @@ A UI framework created by flutter to support andriod devices to be integrated to
   
   <img src="flutterBash/captures/page/guide.gif" width="150"/>
   
-- Xi You
+- Calendar Page
 
   <img src="flutterBash/captures/products/xiyou.png" width="150"/>
 
-- You Qi
+- ContentView Page
 
   <img src="flutterBash/captures/products/youqi.png" width="150"/>
   

@@ -109,7 +109,7 @@ class _ReadWriteFileDemoState extends State<ReadWriteFileDemo> {
             borderRadius: 4,
             title: Text("Write key value from xml"),
             onTap: () {
-              KeyValueStorage.saveString("jk", "https://jiangkang.tech")
+              KeyValueStorage.saveString("jk", "https://github.com/boyplatform")
                   .then((value) {
                 _showDialog("jk", value ? "Success" : "Failed");
               }).catchError((err) {
