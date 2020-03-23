@@ -5,6 +5,10 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'page/page_entry.dart';
 
+import 'dart:async';
+import 'package:flutter/services.dart';
+
+
 /// Home page
 /// basic sketch : drawer + bottom navigation bar
 class HomePage extends StatefulWidget {
@@ -13,6 +17,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  static const platform = const MethodChannel('samples.flutter.io/pluginAndriod');
+  String _batteryLevel = 'Unknown battery level.';
   final List<Widget> pages = [
     PageEntry(),
     ComponentEntry(),
@@ -21,6 +28,26 @@ class _HomePageState extends State<HomePage> {
   ];
 
   int _currentIndex = 0;
+
+  Future<Null> _getBatteryLevel() async {
+    String batteryLevel;
+    try {
+      final int result = await platform.invokeMethod('getBatteryLevel');
+      batteryLevel = 'Battery level at $result % .';
+    } on PlatformException catch (e) {
+      batteryLevel = "Failed to get battery level: '${e.message}'.";
+    }
+
+    setState(() {
+      _batteryLevel = batteryLevel;
+    });
+  }
+  @override
+  void initState() {
+    super.initState();
+   
+    this._getBatteryLevel();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,6 +96,10 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Text(
                         "BoyBian",
+                        style: Theme.of(context).primaryTextTheme.title,
+                      ),
+                      Text(
+                        "电量:"+_batteryLevel,
                         style: Theme.of(context).primaryTextTheme.title,
                       ),
                     ],

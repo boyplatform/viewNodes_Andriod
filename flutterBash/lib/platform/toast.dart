@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 
-const platform = const MethodChannel("com.boybian.flutter_system/toast");
+const platform = const MethodChannel("samples.flutter.io/pluginAndriod");
 
 /// show a toast
 Future<void> showToast(String message) async {
